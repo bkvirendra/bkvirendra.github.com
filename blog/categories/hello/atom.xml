@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Virendra Rajput]]></title>
-  <link href="http://bkvirendra.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Hello | Virendra Rajput]]></title>
+  <link href="http://bkvirendra.github.com/blog/categories/hello/atom.xml" rel="self"/>
   <link href="http://bkvirendra.github.com/"/>
   <updated>2012-05-05T14:35:26+05:30</updated>
   <id>http://bkvirendra.github.com/</id>
