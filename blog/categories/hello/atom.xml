@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Hello | Virendra Rajput]]></title>
   <link href="http://bkvirendra.github.com/blog/categories/hello/atom.xml" rel="self"/>
   <link href="http://bkvirendra.github.com/"/>
-  <updated>2012-05-05T17:31:18+05:30</updated>
+  <updated>2012-05-05T17:55:12+05:30</updated>
   <id>http://bkvirendra.github.com/</id>
   <author>
     <name><![CDATA[Virendra Rajput]]></name>
@@ -20,7 +20,9 @@
     <id>http://bkvirendra.github.com/Hello/hello</id>
     <content type="html"><![CDATA[<h2>Hello World !</h2>
 
-<h2>My <a href="http://bkvirendra.github.com/virendra">HomePage</a></h2>
+<h2>My <a href="http://teckzone.in/virendra" target="_blank">HomePage</a></h2>
+
+<h2>Creator of <a href="http://teckzone.in/fbinstant" target="_blank">FBInstant</a></h2>
 ]]></content>
   </entry>
   
