@@ -4,7 +4,7 @@
   <title><![CDATA[Virendra Rajput]]></title>
   <link href="http://bkvirendra.github.com/atom.xml" rel="self"/>
   <link href="http://bkvirendra.github.com/"/>
-  <updated>2012-05-05T17:55:12+05:30</updated>
+  <updated>2012-05-09T20:04:55+05:30</updated>
   <id>http://bkvirendra.github.com/</id>
   <author>
     <name><![CDATA[Virendra Rajput]]></name>
@@ -18,9 +18,7 @@
     <link href="http://bkvirendra.github.com/Hello/hello.html"/>
     <updated>2012-05-05T14:01:00+05:30</updated>
     <id>http://bkvirendra.github.com/Hello/hello</id>
-    <content type="html"><![CDATA[<h2>Hello World !</h2>
-
-<h2>My <a href="http://teckzone.in/virendra" target="_blank">HomePage</a></h2>
+    <content type="html"><![CDATA[<h2>My <a href="http://teckzone.in/virendra" target="_blank">HomePage</a></h2>
 
 <h2>Creator of <a href="http://teckzone.in/fbinstant" target="_blank">FBInstant</a></h2>
 ]]></content>
