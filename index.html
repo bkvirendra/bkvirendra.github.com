@@ -9,8 +9,9 @@
   <meta name="author" content="Virendra Rajput">
 
   
-  <meta name="description" content="My HomePage Creator of FBInstant
-">
+  <meta name="description" content="Today a lot of web apps/sites use Facebook for signing up users for
+their websites. As users generally dont like to fill out registration
+forms for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +71,7 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="http://teckzone.in/virendra/">About Me</a></li>
 </ul>
 
 </nav>
@@ -77,6 +79,103 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/Facebook/Apps,/PHP/SDK,/JS/SDK/signing-up-using-facebook-php-and-js-sdk.html">Signing Up Using Facebook PHP and JS SDK</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-11T02:24:00+05:30" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today a lot of web apps/sites use Facebook for signing up users for
+their websites. As users generally dont like to fill out registration
+forms for every new site they visit. So here s a script that uses
+Facebook Authentication to register users.</p>
+
+<h1><a href="http://teckzone.in/myfbapps/mygreatapp/">Demo</a></h1>
+
+<h1><a href="https://github.com/bkvirendra/My-Great-App/zipball/master">Download</a></h1>
+
+<p>Here s what you need to edit in the script First you need to create a
+DB. Then create a table for signups.</p>
+
+<div><script src='https://gist.github.com/2653974.js?file='></script>
+<noscript><pre><code>CREATE TABLE signups
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(70),
+uid VARCHAR(200),
+username VARCHAR(100)
+)</code></pre></noscript></div>
+
+
+<p>Then you need to edit the following configurations in the &#8220;db/dbconfig.php&#8221; file</p>
+
+<div><script src='https://gist.github.com/2655999.js?file='></script>
+<noscript><pre><code>&lt;?php
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', ' '); // Your DB Username goes here
+define('DB_PASSWORD', ' '); // Your DB PassWord Goes here
+define('DB_DATABASE', ' '); // The name of the DB goes here
+$connection = mysql_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysql_error());
+$database = mysql_select_db(DB_DATABASE) or die(mysql_error());
+?&gt;
+</code></pre></noscript></div>
+
+
+<p>You need to have a Facebook App ID and App secret. You can create an Facebook App <a href="https://developers.facebook.com/apps">here</a>
+So just add your app ID and app secret in the &#8220;index.php&#8221; &amp; &#8220;home.php&#8221;</p>
+
+<div><script src='https://gist.github.com/2656044.js?file='></script>
+<noscript><pre><code>require 'src/facebook.php';
+require 'db/functions.php';
+
+$facebook = new Facebook(array(
+  'appId'  =&gt; ' ', // Add your APP ID here
+  'secret' =&gt; ' ', // Add your App secret here
+));
+</code></pre></noscript></div>
+
+
+<p>And finally add your Redirect URI in the &#8220;index.php&#8221; as show in the gist</p>
+
+<div><script src='https://gist.github.com/2656046.js?file='></script>
+<noscript><pre><code>$params = array(
+  'scope' =&gt; 'email',
+  'redirect_uri' =&gt; ' ' // Add your Redirect URI Here
+);
+
+$loginUrl = $facebook-&gt;getLoginUrl($params);</code></pre></noscript></div>
+
+
+<p>If you have any concerns or issues you can send a Pull Request on <a href="https://github.com/bkvirendra/My-Great-App">Github</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -127,6 +226,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/Facebook/Apps,/PHP/SDK,/JS/SDK/signing-up-using-facebook-php-and-js-sdk.html">Signing Up Using Facebook PHP and JS SDK</a>
+      </li>
     
       <li class="post">
         <a href="/Hello/hello.html">Hello</a>

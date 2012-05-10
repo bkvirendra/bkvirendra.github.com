@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Virendra Rajput]]></title>
-  <link href="http://bkvirendra.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: SDK, | Virendra Rajput]]></title>
+  <link href="http://bkvirendra.github.com/blog/categories/sdk-/atom.xml" rel="self"/>
   <link href="http://bkvirendra.github.com/"/>
   <updated>2012-05-11T03:26:38+05:30</updated>
   <id>http://bkvirendra.github.com/</id>
@@ -30,7 +30,7 @@ Facebook Authentication to register users.</p>
 <p>Here s what you need to edit in the script First you need to create a
 DB. Then create a table for signups.</p>
 
-<div><script src='https://gist.github.com/2653974.js?file='></script>
+<p><div><script src='https://gist.github.com/2653974.js?file='></script>
 <noscript><pre><code>CREATE TABLE signups
 (
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -38,11 +38,11 @@ email VARCHAR(70),
 uid VARCHAR(200),
 username VARCHAR(100)
 )</code></pre></noscript></div>
+</p>
 
+<p>Then you need to edit the following configurations in the "db/dbconfig.php" file</p>
 
-<p>Then you need to edit the following configurations in the &#8220;db/dbconfig.php&#8221; file</p>
-
-<div><script src='https://gist.github.com/2655999.js?file='></script>
+<p><div><script src='https://gist.github.com/2655999.js?file='></script>
 <noscript><pre><code>&lt;?php
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', ' '); // Your DB Username goes here
@@ -52,12 +52,12 @@ $connection = mysql_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysql_er
 $database = mysql_select_db(DB_DATABASE) or die(mysql_error());
 ?&gt;
 </code></pre></noscript></div>
-
+</p>
 
 <p>You need to have a Facebook App ID and App secret. You can create an Facebook App <a href="https://developers.facebook.com/apps">here</a>
-So just add your app ID and app secret in the &#8220;index.php&#8221; &amp; &#8220;home.php&#8221;</p>
+So just add your app ID and app secret in the "index.php" &amp; "home.php"</p>
 
-<div><script src='https://gist.github.com/2656044.js?file='></script>
+<p><div><script src='https://gist.github.com/2656044.js?file='></script>
 <noscript><pre><code>require 'src/facebook.php';
 require 'db/functions.php';
 
@@ -66,31 +66,20 @@ $facebook = new Facebook(array(
   'secret' =&gt; ' ', // Add your App secret here
 ));
 </code></pre></noscript></div>
+</p>
 
+<p>And finally add your Redirect URI in the "index.php" as show in the gist</p>
 
-<p>And finally add your Redirect URI in the &#8220;index.php&#8221; as show in the gist</p>
-
-<div><script src='https://gist.github.com/2656046.js?file='></script>
+<p><div><script src='https://gist.github.com/2656046.js?file='></script>
 <noscript><pre><code>$params = array(
   'scope' =&gt; 'email',
   'redirect_uri' =&gt; ' ' // Add your Redirect URI Here
 );
 
 $loginUrl = $facebook-&gt;getLoginUrl($params);</code></pre></noscript></div>
-
+</p>
 
 <p>If you have any concerns or issues you can send a Pull Request on <a href="https://github.com/bkvirendra/My-Great-App">Github</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello]]></title>
-    <link href="http://bkvirendra.github.com/Hello/hello.html"/>
-    <updated>2012-05-05T14:01:00+05:30</updated>
-    <id>http://bkvirendra.github.com/Hello/hello</id>
-    <content type="html"><![CDATA[<h2>My <a href="http://teckzone.in/virendra" target="_blank">HomePage</a></h2>
-
-<h2>Creator of <a href="http://teckzone.in/fbinstant" target="_blank">FBInstant</a></h2>
 ]]></content>
   </entry>
   
