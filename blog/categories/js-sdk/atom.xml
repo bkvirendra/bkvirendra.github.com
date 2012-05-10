@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: JS | Virendra Rajput]]></title>
-  <link href="http://bkvirendra.github.com/blog/categories/js/atom.xml" rel="self"/>
+  <title><![CDATA[Category: JS-SDK | Virendra Rajput]]></title>
+  <link href="http://bkvirendra.github.com/blog/categories/js-sdk/atom.xml" rel="self"/>
   <link href="http://bkvirendra.github.com/"/>
-  <updated>2012-05-11T03:26:38+05:30</updated>
+  <updated>2012-05-11T03:33:51+05:30</updated>
   <id>http://bkvirendra.github.com/</id>
   <author>
     <name><![CDATA[Virendra Rajput]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Signing Up Using Facebook PHP and JS SDK]]></title>
-    <link href="http://bkvirendra.github.com/Facebook/Apps,/PHP/SDK,/JS/SDK/signing-up-using-facebook-php-and-js-sdk.html"/>
+    <link href="http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html"/>
     <updated>2012-05-11T02:24:00+05:30</updated>
-    <id>http://bkvirendra.github.com/Facebook/Apps,/PHP/SDK,/JS/SDK/signing-up-using-facebook-php-and-js-sdk</id>
+    <id>http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk</id>
     <content type="html"><![CDATA[<p>Today a lot of web apps/sites use Facebook for signing up users for
 their websites. As users generally dont like to fill out registration
 forms for every new site they visit. So here s a script that uses

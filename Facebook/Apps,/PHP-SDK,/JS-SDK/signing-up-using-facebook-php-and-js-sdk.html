@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: SDK, - Virendra Rajput</title>
+  <title>Signing Up Using Facebook PHP and JS SDK - Virendra Rajput</title>
   <meta name="author" content="Virendra Rajput">
 
   
-  <meta name="description" content="Category: SDK,">
+  <meta name="description" content="Today a lot of web apps/sites use Facebook for signing up users for
+their websites. As users generally dont like to fill out registration
+forms for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bkvirendra.github.comblog/categories/sdk-">
+  <link rel="canonical" href="http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,36 +78,156 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: SDK,</h1>
+    
+      <h1 class="entry-title">Signing Up Using Facebook PHP and JS SDK</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-11T02:24:00+05:30" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Today a lot of web apps/sites use Facebook for signing up users for
+their websites. As users generally dont like to fill out registration
+forms for every new site they visit. So here s a script that uses
+Facebook Authentication to register users.</p>
 
-  
-  <h2>2012</h2>
+<h1><a href="http://teckzone.in/myfbapps/mygreatapp/">Demo</a></h1>
 
-<article>
-  
-<h1><a href="/Facebook/Apps,/PHP/SDK,/JS/SDK/signing-up-using-facebook-php-and-js-sdk.html">Signing Up Using Facebook PHP and JS SDK</a></h1>
-<time datetime="2012-05-11T02:24:00+05:30" pubdate><span class='month'>May</span> <span class='day'>11</span> <span class='year'>2012</span></time>
+<h1><a href="https://github.com/bkvirendra/My-Great-App/zipball/master">Download</a></h1>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/apps-/'>Apps,</a>, <a class='category' href='/blog/categories/facebook/'>Facebook</a>, <a class='category' href='/blog/categories/js/'>JS</a>, <a class='category' href='/blog/categories/php/'>PHP</a>, <a class='category' href='/blog/categories/sdk/'>SDK</a>, <a class='category' href='/blog/categories/sdk-/'>SDK,</a></span>
-</footer>
+<p>Here s what you need to edit in the script First you need to create a
+DB. Then create a table for signups.</p>
+
+<div><script src='https://gist.github.com/2653974.js?file='></script>
+<noscript><pre><code>CREATE TABLE signups
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(70),
+uid VARCHAR(200),
+username VARCHAR(100)
+)</code></pre></noscript></div>
 
 
-</article>
+<p>Then you need to edit the following configurations in the &#8220;db/dbconfig.php&#8221; file</p>
 
+<div><script src='https://gist.github.com/2655999.js?file='></script>
+<noscript><pre><code>&lt;?php
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', ' '); // Your DB Username goes here
+define('DB_PASSWORD', ' '); // Your DB PassWord Goes here
+define('DB_DATABASE', ' '); // The name of the DB goes here
+$connection = mysql_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysql_error());
+$database = mysql_select_db(DB_DATABASE) or die(mysql_error());
+?&gt;
+</code></pre></noscript></div>
+
+
+<p>You need to have a Facebook App ID and App secret. You can create an Facebook App <a href="https://developers.facebook.com/apps">here</a>
+So just add your app ID and app secret in the &#8220;index.php&#8221; &amp; &#8220;home.php&#8221;</p>
+
+<div><script src='https://gist.github.com/2656044.js?file='></script>
+<noscript><pre><code>require 'src/facebook.php';
+require 'db/functions.php';
+
+$facebook = new Facebook(array(
+  'appId'  =&gt; ' ', // Add your APP ID here
+  'secret' =&gt; ' ', // Add your App secret here
+));
+</code></pre></noscript></div>
+
+
+<p>And finally add your Redirect URI in the &#8220;index.php&#8221; as show in the gist</p>
+
+<div><script src='https://gist.github.com/2656046.js?file='></script>
+<noscript><pre><code>$params = array(
+  'scope' =&gt; 'email',
+  'redirect_uri' =&gt; ' ' // Add your Redirect URI Here
+);
+
+$loginUrl = $facebook-&gt;getLoginUrl($params);</code></pre></noscript></div>
+
+
+<p>If you have any concerns or issues you can send a Pull Request on <a href="https://github.com/bkvirendra/My-Great-App">Github</a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Virendra Rajput</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-11T02:24:00+05:30" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/apps-/'>Apps,</a>, <a class='category' href='/blog/categories/facebook/'>Facebook</a>, <a class='category' href='/blog/categories/js-sdk/'>JS-SDK</a>, <a class='category' href='/blog/categories/php-sdk-/'>PHP-SDK,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html" data-via="bkvirendra" data-counturl="http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Hello/hello.html" title="Previous Post: Hello">&laquo; Hello</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -116,7 +238,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/Facebook/Apps,/PHP/SDK,/JS/SDK/signing-up-using-facebook-php-and-js-sdk.html">Signing Up Using Facebook PHP and JS SDK</a>
+        <a href="/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html">Signing Up Using Facebook PHP and JS SDK</a>
       </li>
     
       <li class="post">
@@ -194,7 +316,10 @@
       var disqus_shortname = 'VirendraRajput';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html';
+        var disqus_url = 'http://bkvirendra.github.com/Facebook/Apps,/PHP-SDK,/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
