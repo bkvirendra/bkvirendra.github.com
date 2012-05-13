@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Virendra Rajput</title>
+  <title>Create Facebook like Alert Notifications with CSS and Jquery - Virendra Rajput</title>
   <meta name="author" content="Virendra Rajput">
 
   
-  <meta name="description" content="Blog Archive 2012 Create Facebook like Alert Notifications with CSS and Jquery
-May 13 2012 posted in CSS, Jquery Signing Up Using Facebook PHP and &hellip;">
+  <meta name="description" content="I ve always liked the Facebook&#8217;s Alert Notifications. They look very simple and decent.
+And I always wanted to have such simple notifications &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ May 13 2012 posted in CSS, Jquery Signing Up Using Facebook PHP and &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bkvirendra.github.com/blog/archives">
+  <link rel="canonical" href="http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,64 +77,169 @@ May 13 2012 posted in CSS, Jquery Signing Up Using Facebook PHP and &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Create Facebook Like Alert Notifications With CSS and Jquery</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-13T17:36:00+05:30" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>I ve always liked the Facebook&#8217;s Alert Notifications. They look very simple and decent.
+And I always wanted to have such simple notifications on my websites.</p>
 
-  
-  <h2>2012</h2>
+<h2><a href="http://teckzone.in/alert/">Demo</a></h2>
 
-<article>
-  
-<h1><a href="/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html">Create Facebook like Alert Notifications with CSS and Jquery</a></h1>
-<time datetime="2012-05-13T17:36:00+05:30" pubdate><span class='month'>May</span> <span class='day'>13</span> <span class='year'>2012</span></time>
+<h2><a href="https://github.com/bkvirendra/Facebook-Like-Alert-Notifications/">Download</a></h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/jquery/'>Jquery</a></span>
-</footer>
+<p>The <strong>&#8220;Simplicity&#8221;</strong> is what makes them look really good.
+The way they simply pop out and disappear.</p>
 
+<p><img class="left" src="http://i.imgur.com/Bcxrt.png" width="527" height="119" title="Facebook Loading Notification" ></p>
 
-</article>
+<br />
+<p>So I pulled out my sleeves and made one for myself. A very similar to Facebook&#8217;s one.</p>
 
+<p>So here&#8217;s the CSS for our simple little Alert Box. You can always edit as per your needs though.</p>
 
-
-<article>
-  
-<h1><a href="/Facebook-Apps/PHP-SDK/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html">Signing Up Using Facebook PHP and JS SDK</a></h1>
-<time datetime="2012-05-11T02:24:00+05:30" pubdate><span class='month'>May</span> <span class='day'>11</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/facebook-apps/'>Facebook-Apps</a>, <a class='category' href='/blog/categories/js-sdk/'>JS-SDK</a>, <a class='category' href='/blog/categories/php-sdk/'>PHP-SDK</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/Hello/hello.html">Hello</a></h1>
-<time datetime="2012-05-05T14:01:00+05:30" pubdate><span class='month'>May</span> <span class='day'>05</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/hello/'>Hello</a></span>
-</footer>
+<div><script src='https://gist.github.com/2688476.js?file='></script>
+<noscript><pre><code>#alert{
+    position:fixed; 
+    display:none; 
+    left:50%; 
+    margin-left:-300px; 
+    bottom:120px; 
+    width:600px; 
+    text-align:center; 
+    height:auto; 
+    background:#eee; 
+    padding:30px 10px; 
+    font-family:'Handlee', sans-serif;
+    font-size:28px; 
+    font-weight: bold; 
+    border-radius:10px; 
+    box-shadow:0px 5px 15px #333; 
+    -webkit-box-shadow:0px 5px 15px #333;
+    -moz-box-shadow:0px 5px 15px #333; 
+    border:10px solid rgba(0,0,0,.5);
+    background-clip: padding-box; 
+    text-shadow:0px 1px 0px #FFF;
+}​</code></pre></noscript></div>
 
 
-</article>
+<p>And here&#8217;s the JS code that I used to pop it out and make it vanish after a Timeout.
+I made a function for this called &#8220;alert()&#8221; which takes 2 arguments.
+First is the &#8220;textToshow&#8221; which surely the text/ notification you need to show.
+And the second is the &#8220;timeToShow&#8221; which is the time the notification should be shown to the user in milliseconds.</p>
 
+<div><script src='https://gist.github.com/2688553.js?file='></script>
+<noscript><pre><code>function alert(textToshow, timeToShow) {
+    $(&quot;#alertText&quot;).html(textToshow);
+    $(&quot;#alert&quot;).fadeIn(1000, function() {
+        $(&quot;#alertText&quot;).fadeIn(700);
+    });
+    setTimeout(function() {
+        hideAlert();
+    }, timeToShow);
+}
+
+function hideAlert() {
+    $(&quot;#alert&quot;).fadeOut(700);
+}
+
+$(document).ready(function() {
+    alert(&quot;Loading...&quot;, 5000);
+});
+
+$(&quot;button&quot;).click(function() {
+    alert(&quot;You Clicked Me...&quot;, 5000);
+});
+</code></pre></noscript></div>
+
+
+<p>I ve also created a <a href="http://jsfiddle.net/bkvirendra/kDSjZ/1/">Fiddle</a> for this.</p>
+
+<p>Feel free to use it the way you want.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Virendra Rajput</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-13T17:36:00+05:30" pubdate data-updated="true">May 13<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/jquery/'>Jquery</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html" data-via="bkvirendra" data-counturl="http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Facebook-Apps/PHP-SDK/JS-SDK/signing-up-using-facebook-php-and-js-sdk.html" title="Previous Post: Signing Up Using Facebook PHP and JS SDK">&laquo; Signing Up Using Facebook PHP and JS SDK</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -227,7 +332,10 @@ May 13 2012 posted in CSS, Jquery Signing Up Using Facebook PHP and &hellip;">
       var disqus_shortname = 'VirendraRajput';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html';
+        var disqus_url = 'http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

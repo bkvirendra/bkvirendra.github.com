@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jquery | Virendra Rajput]]></title>
+  <link href="http://bkvirendra.github.com/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://bkvirendra.github.com/"/>
+  <updated>2012-05-13T20:13:41+05:30</updated>
+  <id>http://bkvirendra.github.com/</id>
+  <author>
+    <name><![CDATA[Virendra Rajput]]></name>
+    <email><![CDATA[thevirendrarajput@facebook.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Create Facebook like Alert Notifications with CSS and Jquery]]></title>
+    <link href="http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery.html"/>
+    <updated>2012-05-13T17:36:00+05:30</updated>
+    <id>http://bkvirendra.github.com/CSS/Jquery/create-facebook-like-alert-notifications-with-css-and-jquery</id>
+    <content type="html"><![CDATA[<p>I ve always liked the Facebook's Alert Notifications. They look very simple and decent.
+And I always wanted to have such simple notifications on my websites.</p>
+
+<h2><a href="http://teckzone.in/alert/">Demo</a></h2>
+
+<h2><a href="https://github.com/bkvirendra/Facebook-Like-Alert-Notifications/">Download</a></h2>
+
+<p>The <strong>"Simplicity"</strong> is what makes them look really good.
+The way they simply pop out and disappear.</p>
+
+<p><img class="left" src="http://i.imgur.com/Bcxrt.png" width="527" height="119" title="Facebook Loading Notification" ></p>
+
+<p>So I pulled out my sleeves and made one for myself. A very similar to Facebook's one.</p>
+
+<p>So here's the CSS for our simple little Alert Box. You can always edit as per your needs though.</p>
+
+<p><div><script src='https://gist.github.com/2688476.js?file='></script>
+<noscript><pre><code>#alert{
+    position:fixed; 
+    display:none; 
+    left:50%; 
+    margin-left:-300px; 
+    bottom:120px; 
+    width:600px; 
+    text-align:center; 
+    height:auto; 
+    background:#eee; 
+    padding:30px 10px; 
+    font-family:'Handlee', sans-serif;
+    font-size:28px; 
+    font-weight: bold; 
+    border-radius:10px; 
+    box-shadow:0px 5px 15px #333; 
+    -webkit-box-shadow:0px 5px 15px #333;
+    -moz-box-shadow:0px 5px 15px #333; 
+    border:10px solid rgba(0,0,0,.5);
+    background-clip: padding-box; 
+    text-shadow:0px 1px 0px #FFF;
+}​</code></pre></noscript></div>
+</p>
+
+<p>And here's the JS code that I used to pop it out and make it vanish after a Timeout.
+I made a function for this called "alert()" which takes 2 arguments.
+First is the "textToshow" which surely the text/ notification you need to show.
+And the second is the "timeToShow" which is the time the notification should be shown to the user in milliseconds.</p>
+
+<p><div><script src='https://gist.github.com/2688553.js?file='></script>
+<noscript><pre><code>function alert(textToshow, timeToShow) {
+    $(&quot;#alertText&quot;).html(textToshow);
+    $(&quot;#alert&quot;).fadeIn(1000, function() {
+        $(&quot;#alertText&quot;).fadeIn(700);
+    });
+    setTimeout(function() {
+        hideAlert();
+    }, timeToShow);
+}
+
+function hideAlert() {
+    $(&quot;#alert&quot;).fadeOut(700);
+}
+
+$(document).ready(function() {
+    alert(&quot;Loading...&quot;, 5000);
+});
+
+$(&quot;button&quot;).click(function() {
+    alert(&quot;You Clicked Me...&quot;, 5000);
+});
+</code></pre></noscript></div>
+</p>
+
+<p>I ve also created a <a href="http://jsfiddle.net/bkvirendra/kDSjZ/1/">Fiddle</a> for this.</p>
+
+<p>Feel free to use it the way you want.</p>
+]]></content>
+  </entry>
+  
+</feed>
