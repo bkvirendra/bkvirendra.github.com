@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Autocomplete | Virendra Rajput]]></title>
+  <link href="http://bkvirendra.github.com/blog/categories/autocomplete/atom.xml" rel="self"/>
+  <link href="http://bkvirendra.github.com/"/>
+  <updated>2012-06-10T10:29:22+05:30</updated>
+  <id>http://bkvirendra.github.com/</id>
+  <author>
+    <name><![CDATA[Virendra Rajput]]></name>
+    <email><![CDATA[thevirendrarajput@facebook.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting AutoComplete Suggestions from Google]]></title>
+    <link href="http://bkvirendra.github.com/Google/Autocomplete/PHP/getting-autocomplete-suggestions-from-google.html"/>
+    <updated>2012-06-10T09:14:00+05:30</updated>
+    <id>http://bkvirendra.github.com/Google/Autocomplete/PHP/getting-autocomplete-suggestions-from-google</id>
+    <content type="html"><![CDATA[<p>Recently a few people suggested that a Autocomplete feature would be a good add for my <a href="http://teckzone.in/fbinstant/">FBInstant</a> app.
+So well I decided why not, I always loved autocomplete's, they save a lot of effort and time.
+Hence I thought implementing it would not be a big deal since there are so many plugins already available on the web.</p>
+
+<p>But the question was to have a good source for suggestions.
+So I decided why not "Google". Since Google's autocomplete has much better suggestions and even the most relevant one's.</p>
+
+<p>So here's a small dirty little hack that I used to get autocomplete suggestions from Google, for my <a href="http://teckzone.in/fbinstant/">FBInstant</a> app.</p>
+
+<p><div><script src='https://gist.github.com/2903853.js?file='></script>
+<noscript><pre><code>&lt;?php
+
+if (isset($_REQUEST[&quot;q&quot;])) { 
+
+	$query = $_REQUEST[&quot;q&quot;];
+
+	$q = &quot;'http://google.com/complete/search?output=toolbar&amp;q=$query'&quot;; // Building the query
+	
+	// yql request
+	$query = &quot;select * from xml where url=$q&quot;;
+	$url = &quot;http://query.yahooapis.com/v1/public/yql?q=&quot;;
+	$url .= rawurlencode($query);
+	$url .= &quot;&amp;format=json&amp;env=store://datatables.org/alltableswithkeys&quot;;
+
+	function get_data($url) { // function for Curl Request
+		$ch = curl_init();
+		$timeout = 5;
+		curl_setopt($ch,CURLOPT_URL,$url);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+		$data = curl_exec($ch);
+		curl_close($ch);
+		return $data;
+	}
+
+	$data = get_data($url); // getting the suggestions
+
+	$info = json_decode($data, true); // decoding the json data
+	
+	header('Content-type: application/json'); // sending json headers
+	//echo &quot;&lt;pre&gt;&quot;; print_r($info); echo &quot;&lt;/pre&gt;&quot;; // Used for debugging 
+
+	/********************************************
+		#################################
+		   formatting the suggestions
+		#################################
+	********************************************/
+	echo &quot;[&quot;;
+	echo '&quot;';
+	echo $_GET[&quot;q&quot;];
+	echo '&quot;';
+	echo &quot;,&quot;;
+	echo &quot;[&quot;;
+	$c = 0;
+
+	foreach( $info['query']['results']['toplevel']['CompleteSuggestion'] as $i ) {
+		$return = $i['suggestion']['data'];
+		echo '&quot;';
+	    echo $return;
+		echo '&quot;';
+		$c++;
+	if ($c &lt;= 9) {
+	   echo &quot;,&quot;;
+   } else {
+
+   }
+}
+	echo &quot;]&quot;;
+	echo &quot;]&quot;;
+} else {
+	echo &quot;not found&quot;; // Not found
+}
+?&gt;</code></pre></noscript></div>
+</p>
+
+<p>I ve added enough comments throughout the source code.</p>
+
+<p>You can download the source code <a href="https://github.com/bkvirendra/autocomplete/zipball/master">here</a></p>
+
+<p>Or try out a demo <a href="http://teckzone.in/fbinstant/q.php?q=fa">here</a></p>
+]]></content>
+  </entry>
+  
+</feed>
